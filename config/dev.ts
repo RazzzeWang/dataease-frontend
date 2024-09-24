@@ -1,14 +1,19 @@
+/*
+ * @Author: ze.wang@diact.com
+ * @Date: 2024-09-23 15:16:29
+ * @Function: Please Input Function
+ */
 export default {
   server: {
     proxy: {
       '/api/f': {
-        target: 'http://localhost:8100',
+        target: 'https://demo.dataease.cn',
         changeOrigin: true,
         rewrite: path => path.replace(/^\/api\/f/, '')
       },
       // 使用 proxy 实例
       '/api': {
-        target: 'http://localhost:8100',
+        target: 'https://demo.dataease.cn',
         changeOrigin: true,
         rewrite: path => path.replace(/^\/api/, 'de2api')
       }
