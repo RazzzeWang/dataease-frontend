@@ -22,11 +22,11 @@ const setCollapse = () => {
 
 <template>
   <div class="common-layout">
-    <HeaderSystem
+    <!-- <HeaderSystem
       v-if="settingMenu || marketMenu || toolboxMenu"
       :title="toolboxMenu ? '工具箱' : marketMenu ? '模板中心' : ''"
     />
-    <Header v-else></Header>
+    <Header v-else></Header> -->
     <el-container class="layout-container">
       <template v-if="systemMenu || settingMenu || toolboxMenu">
         <Sidebar v-if="!isCollapse" class="layout-sidebar">

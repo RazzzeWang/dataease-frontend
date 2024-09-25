@@ -1,3 +1,8 @@
+/*
+ * @Author: ze.wang@diact.com
+ * @Date: 2024-09-23 15:16:29
+ * @Function: Please Input Function
+ */
 import { createApp } from 'vue'
 import '@/style/index.less'
 import 'normalize.css/normalize.css'
@@ -12,7 +17,6 @@ import { setupCustomComponent } from '@/custom-component'
 import { installDirective } from '@/directive'
 import '@/utils/DateUtil'
 import '@/permission'
-import WebSocketPlugin from '../../websocket'
 const setupAll = async () => {
   const app = createApp(App)
   installDirective(app)
@@ -22,7 +26,6 @@ const setupAll = async () => {
   setupElementPlus(app)
   setupCustomComponent(app)
   setupElementPlusIcons(app)
-  app.use(WebSocketPlugin)
   app.mount('#app')
 }
 
