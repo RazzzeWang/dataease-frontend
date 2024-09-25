@@ -166,6 +166,208 @@ export const routes: AppRouteRecordRaw[] = [
   }
 ]
 
+export const staticRoutes: AppRouteRecordRaw[] = [
+  {
+    path: '/workbranch',
+    component: 'workbranch',
+    hidden: false,
+    name: 'workbranch',
+    inLayout: true,
+    redirect: null,
+    meta: {
+      title: '工作台',
+      icon: null
+    },
+    children: null,
+    plugin: false
+  },
+  {
+    path: '/panel',
+    component: 'visualized/view/panel',
+    hidden: false,
+    name: 'panel',
+    inLayout: true,
+    redirect: null,
+    meta: {
+      title: '仪表板',
+      icon: null
+    },
+    children: null,
+    plugin: false
+  },
+  {
+    path: '/screen',
+    component: 'visualized/view/screen',
+    hidden: false,
+    name: 'screen',
+    inLayout: true,
+    redirect: null,
+    meta: {
+      title: '数据大屏',
+      icon: null
+    },
+    children: null,
+    plugin: false
+  },
+  {
+    path: '/data',
+    component: null,
+    hidden: false,
+    name: 'data',
+    inLayout: true,
+    redirect: null,
+    meta: {
+      title: '数据准备',
+      icon: null
+    },
+    children: [
+      {
+        path: 'dataset',
+        component: 'visualized/data/dataset',
+        hidden: false,
+        name: 'dataset',
+        inLayout: true,
+        redirect: null,
+        meta: {
+          title: '数据集',
+          icon: null
+        },
+        children: null,
+        plugin: false
+      },
+      {
+        path: 'datasource',
+        component: 'visualized/data/datasource',
+        hidden: false,
+        name: 'datasource',
+        inLayout: true,
+        redirect: null,
+        meta: {
+          title: '数据源',
+          icon: null
+        },
+        children: null,
+        plugin: false
+      }
+    ],
+    plugin: false
+  },
+  {
+    path: '/template-market',
+    component: 'template-market',
+    hidden: true,
+    name: 'template-market',
+    inLayout: true,
+    redirect: null,
+    meta: {
+      title: '模板市场',
+      icon: null
+    },
+    children: null,
+    plugin: false
+  },
+  {
+    path: '/sys-setting',
+    component: null,
+    hidden: true,
+    name: 'sys-setting',
+    inLayout: true,
+    redirect: null,
+    meta: {
+      title: 'i18n_menu.sys-setting',
+      icon: null
+    },
+    children: [
+      {
+        path: 'parameter',
+        component: 'system/parameter',
+        hidden: false,
+        name: 'parameter',
+        inLayout: true,
+        redirect: null,
+        meta: {
+          title: '系统参数',
+          icon: 'sys-parameter'
+        },
+        children: null,
+        plugin: false
+      },
+      {
+        path: 'font',
+        component: 'system/font',
+        hidden: false,
+        name: 'font',
+        inLayout: true,
+        redirect: null,
+        meta: {
+          title: '字体管理',
+          icon: 'icon_font'
+        },
+        children: null,
+        plugin: false
+      }
+    ],
+    plugin: false
+  },
+  {
+    path: '/dataset-form',
+    component: 'visualized/data/dataset/form',
+    hidden: true,
+    name: 'dataset-form',
+    inLayout: false,
+    redirect: null,
+    meta: {
+      title: 'i18n_menu.dataset-form',
+      icon: null
+    },
+    children: null,
+    plugin: false
+  },
+  {
+    path: '/ds-form',
+    component: 'visualized/data/datasource/form',
+    hidden: true,
+    name: 'datasource-form',
+    inLayout: false,
+    redirect: null,
+    meta: {
+      title: 'i18n_menu.datasource-form',
+      icon: null
+    },
+    children: null,
+    plugin: false
+  },
+  {
+    path: '/toolbox',
+    component: null,
+    hidden: true,
+    name: 'toolbox',
+    inLayout: true,
+    redirect: null,
+    meta: {
+      title: 'i18n_menu.toolbox',
+      icon: 'icon_template'
+    },
+    children: [
+      {
+        path: 'template-setting',
+        component: 'toolbox/template-setting',
+        hidden: false,
+        name: 'template-setting',
+        inLayout: true,
+        redirect: null,
+        meta: {
+          title: '模板管理',
+          icon: 'icon_template'
+        },
+        children: null,
+        plugin: false
+      }
+    ],
+    plugin: false
+  }
+]
+
 const router = createRouter({
   history: createWebHashHistory(),
   routes: routes as RouteRecordRaw[]

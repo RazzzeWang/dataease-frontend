@@ -5,7 +5,7 @@ import type { RouteRecordRaw } from 'vue-router'
 import { useNProgress } from '@/hooks/web/useNProgress'
 import { usePermissionStoreWithOut, pathValid, getFirstAuthMenu } from '@/store/modules/permission'
 import { usePageLoading } from '@/hooks/web/usePageLoading'
-import { getRoleRouters } from '@/api/common'
+import { staticRoutes } from '@/router/index'
 import { useCache } from '@/hooks/web/useCache'
 import { isMobile, checkPlatform, isLarkPlatform, isPlatformClient } from '@/utils/utils'
 import { interactiveStoreWithOut } from '@/store/modules/interactive'
@@ -90,7 +90,7 @@ router.beforeEach(async (to, from, next) => {
         return
       }
 
-      let roleRouters = (await getRoleRouters()) || []
+      let roleRouters = staticRoutes.slice(0) || []
       if (isDesktop) {
         roleRouters = roleRouters.filter(item => item.name !== 'system')
       }
